@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="https://github.com/OisinODonnell/E-Store-Front.git" uploadOnCheckin="615d98d9-761a-42f6-8ead-8ecb74ed0a1b">
+  <component name="PublishConfigData" serverName="https://github.com/OisinODonnell/E-Store-FrontEnd.git" uploadOnCheckin="615d98d9-761a-42f6-8ead-8ecb74ed0a1b">
     <serverData>
-      <paths name="https://github.com/OisinODonnell/E-Store-Front.git">
+      <paths name="https://github.com/OisinODonnell/E-Store-FrontEnd.git">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
