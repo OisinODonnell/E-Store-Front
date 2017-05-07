@@ -34,9 +34,9 @@ myApp.controller('StartupController', ['$scope', 'dataFactory', function ($scope
   $scope.sessions       = {};
 
   // functions to get all details from entities
-  // getAll(new Account, dataFactory);
-  getAll(new Manufacturer, dataFactory);
-  getAll(new ItemCategory, dataFactory);
+  getAll(new Account, dataFactory);
+  // getAll(new Manufacturer, dataFactory);
+  // getAll(new ItemCategory, dataFactory);
   // getAll(new Order, dataFactory);
   // getAll(new OrderItem, dataFactory);
   // getAll(new Cart, dataFactory);
@@ -55,18 +55,18 @@ myApp.controller('StartupController', ['$scope', 'dataFactory', function ($scope
    * @param dataType
    * @returns {Array}
    */
-  function getAllAccounts() {
-    let account = new Account();
-    dataFactory.getAccounts()
-      .then( function(response) {
-
-        $scope.accounts = createObjects(response.data, account);
-        account = new Account();
-      },
-      function (error) {
-        $scope.status = 'Unable to load accounts data ' + error.message;
-      });
-  }
+  // function getAllAccounts() {
+  //   let account = new Account();
+  //   dataFactory.getAccounts()
+  //     .then( function(response) {
+  //
+  //       $scope.accounts = createObjects(response.data, account);
+  //       account = new Account();
+  //     },
+  //     function (error) {
+  //       $scope.status = 'Unable to load accounts data ' + error.message;
+  //     });
+  // }
 
 
   /**
