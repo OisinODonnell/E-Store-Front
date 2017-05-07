@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="8953cf94-b7ec-4569-a1cb-511630817157" name="https://github.com/OisinODonnell/E-Store-FrontEnd.git" url="https://github.com/OisinODonnell/E-Store-FrontEnd.git">
-        <fileTransfer host="https://github.com/OisinODonnell/E-Store-FrontEnd.git" port="21">
+      <webServer id="8953cf94-b7ec-4569-a1cb-511630817157" name="https://github.com/OisinODonnell/E-Store-FrontEnd.git">
+        <fileTransfer host="" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
