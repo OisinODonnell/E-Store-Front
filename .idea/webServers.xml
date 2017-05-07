@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="615d98d9-761a-42f6-8ead-8ecb74ed0a1b" name="https://github.com/OisinODonnell/E-Store-Front.git">
-        <fileTransfer port="21">
+        <fileTransfer host="" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
