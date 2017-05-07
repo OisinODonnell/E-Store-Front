@@ -3,62 +3,66 @@
  * Created by oisin on 14/04/2017.
  */
 
-/* Using ECMA6 classes*/
-
 class Account {
 
-    constructor (pAccountId, pDateJoined, pName, pEmail, pPhone, pAccountType, pPaymentType, pLoyaltyCard,
-        pPassword, pAddressStreet, pAddressCity, pAddressCountry)
-    {
-        this._accountId	         = pAccountId        ? pAccountId        : 0 ;
-        this._dateJoined	       = pDateJoined       ? pDateJoined       : "";
-        this._name	             = pName             ? pName             : "";
-        this._email	             = pEmail            ? pEmail            : "";
-        this._phone	             = pPhone            ? pPhone            : "";
-        this._accountType	       = pAccountType      ? pAccountType      : "CUSTOMER";
-        this._paymentType	       = pPaymentType      ? pPaymentType      : "VISA"    ;
-        this._loyaltyCard	       = pLoyaltyCard      ? pLoyaltyCard      : 0 ;
-        this._password	         = pPassword         ? pPassword         : "";
-        this._addressStreet	     = pAddressStreet    ? pAddressStreet    : "";
-        this._addressCity	       = pAddressCity      ? pAddressCity      : "";
-        this._addressCountry	   = pAddressCountry   ? pAddressCountry   : "";
-        this._carts	             = [];
-        this._sessions	         = [];
-        this._orders	           = [];        this._stockReviews	    = [];
+  constructor (accountId, dateJoined, name, email, phone, accountType, paymentType, loyaltyCard,
+               password, addressStreet, addressCity, addressCountry)
+  {
+        this.accountId	    = this.setAccountId     (accountId);
+        this.dateJoined	    = this.setDateJoined    (dateJoined);
+        this.name	          = this.setName          (name);
+        this.email	        = this.setEmail         (email);
+        this.phone	        = this.setPhone         (phone);
+        this.accountType	  = this.setAccountType   (accountType);
+        this.paymentType	  = this.setPaymentType   (paymentType);
+        this.loyaltyCard	  = this.setLoyaltyCard   (loyaltyCard);
+        this.password	      = this.setPassword      (password);
+        this.addressStreet	= this.setAddressStreet (addressStreet);
+        this.addressCity	  = this.setAddressCity   (addressCity);
+        this.addressCountry	= this.setAddressCountry(addressCountry);
+        this.carts	        = this.setCarts         ([]);
+        this.sessions	      = this.setSessions      ([]);
+        this.orders	        = this.setOrders        ([]);
+        this.stockReviews	  = this.setStockReviews  ([]);
     }
 
-    // the getters and setters
+    // getters and setters with default values where attribute is not provided.
 
-    getAccountId     ()  { return this._accountId;             }
-    setAccountId     (x) { this._accountId        = x ? x : 0; }
-    getDateJoined    ()  { return this._dateJoined;            }
-    setDateJoined    (x) { this._dateJoined       = x ? x : "";}
-    getName          ()  { return this._name;                  }
-    setName          (x) { this._name             = x ? x : "";}
-    getEmail         ()  { return this._email;                 }
-    setEmail         (x) { this._email            = x ? x : "";}
-    getPhone         ()  { return this._phone;                 }
-    setPhone         (x) { this._phone            = x ? x : "";}
-    getAccountType   ()  { return this._accountType;           }
-    setAccountType   (x) { this._accountType      = x ? x : "CUSTOMER";}
-    getPaymentType   ()  { return this._paymentType;           }
-    setPaymentType   (x) { this._paymentType      = x ? x : "VISA";    }
-    getLoyaltyCard   ()  { return this._loyaltyCard;           }
-    setLoyaltyCard   (x) { this._loyaltyCard      = x ? x : 0; }
-    getPassword      ()  { return this._password;              }
-    setPassword      (x) { this._password         = x ? x : "";}
-    getAddressStreet ()  { return this._addressStreet;         }
-    setAddressStreet (x) { this._addressStreet    = x ? x : "";}
-    getAddressCity   ()  { return this._addressCity;           }
-    setAddressCity   (x) { this._addressCity      = x ? x : "";}
-    getAddressCountry()  { return this._addressCountry;        }
-    setAddressCountry(x) { this._addressCountry   = x ? x : "";}
-    getCarts         ()  { return this._carts;                 }
-    setCarts         (x) { this._carts            = x ? x : [];}
-    getSessions      ()  { return this._sessions;              }
-    setSessions      (x) { this._sessions         = x ? x : [];}
-    getOrders        ()  { return this._orders;                }
-    setOrders        (x) { this._orders           = x ? x : [];}
-    getStockReviews  ()  { return this._stockReviews;          }
-    setStockReviews  (x) { this._stockReviews     = x ? x : [];}
+    getAccountId     ()  { return this.accountId;             }
+    setAccountId     (x) { this.accountId        = x ? x : 0; }
+    getDateJoined    ()  { return this.dateJoined;            }
+    setDateJoined    (x) { this.dateJoined       = x ? x : "";}
+    getName          ()  { return this.name;                  }
+    setName          (x) { this.name             = x ? x : "";}
+    getEmail         ()  { return this.email;                 }
+    setEmail         (x) { this.email            = x ? x : "";}
+    getPhone         ()  { return this.phone;                 }
+    setPhone         (x) { this.phone            = x ? x : "";}
+    getAccountType   ()  { return this.accountType;           }
+    setAccountType   (x) { this.accountType      = x ? x : "CUSTOMER";}
+    getPaymentType   ()  { return this.paymentType;           }
+    setPaymentType   (x) { this.paymentType      = x ? x : "VISA";    }
+    getLoyaltyCard   ()  { return this.loyaltyCard;           }
+    setLoyaltyCard   (x) { this.loyaltyCard      = x ? x : 0; }
+    getPassword      ()  { return this.password;              }
+    setPassword      (x) { this.password         = x ? x : "";}
+    getAddressStreet ()  { return this.addressStreet;         }
+    setAddressStreet (x) { this.addressStreet    = x ? x : "";}
+    getAddressCity   ()  { return this.addressCity;           }
+    setAddressCity   (x) { this.addressCity      = x ? x : "";}
+    getAddressCountry()  { return this.addressCountry;        }
+    setAddressCountry(x) { this.addressCountry   = x ? x : "";}
+    getCarts         ()  { return this.carts;                 }
+    setCarts         (x) { this.carts            = x ? x : [];}
+    getSessions      ()  { return this.sessions;              }
+    setSessions      (x) { this.sessions         = x ? x : [];}
+    getOrders        ()  { return this.orders;                }
+    setOrders        (x) { this.orders           = x ? x : [];}
+    getStockReviews  ()  { return this.stockReviews;          }
+    setStockReviews  (x) { this.stockReviews     = x ? x : [];}
 }
+
+
+
+
+

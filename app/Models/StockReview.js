@@ -6,34 +6,34 @@
 /* Using ECMA6 classes*/
 
 class StockReview {
-    
-    constructor (pStockItemId, pAccountId, pRating, pComment, pDate) {
 
-        this._stockItemId = pStockItemId   ? pStockItemId  : 0 ;
-        this._accountId   = pAccountId     ? pAccountId    : 0 ;
-        this._rating      = pRating        ? pRating       : 5 ;
-        this._comment     = pComment       ? pComment      : "";
-        this._date        = pDate          ? pDate         : "";
-        this._stockItem   = {};
-        this._account     = {};
+    constructor (stockItemId, accountId, rating, comment, date) {
+
+        this.stockItemId = this.setStockItemId (stockItemId);
+        this.accountId   = this.setAccountId   (accountId);
+        this.rating      = this.setRating      (rating);
+        this.comment     = this.setComment     (comment);
+        this.date        = this.setDate        (date);
+        this.stockItem   = this.setStockItem   ({});
+        this.account     = this.setAccount     ({});
     }
-    
+
     // getters and setters
 
-    getStockItemId()  { return this._stockItemId;           }
-    setStockItemId(x) { this._stockItemId      = x ? x : 0; }
-    getAccountId  ()  { return this._accountId;             }
-    setAccountId  (x) { this._accountId        = x ? x : 0; }
-    getRating     ()  { return this._rating;                }
-    setRating     (x) { this._rating           = x ? x : 5; }
-    getComment    ()  { return this._comment;               }
-    setComment    (x) { this._comment          = x ? x : "";}
-    getDate       ()  { return this._date;                  }
-    setDate       (x) { this._date             = x ? x : "";}
-    getStockItem  ()  { return this._stockItem;             }
-    setStockItem  (x) { this._stockItem        = x ? x : {};}
-    getAccount    ()  { return this._account;               }
-    setAccount    (x) { this._account          = x ? x : {};}
+    getStockItemId()  { return this.stockItemId;           }
+    setStockItemId(x) { this.stockItemId      = x ? x : 0; }
+    getAccountId  ()  { return this.accountId;             }
+    setAccountId  (x) { this.accountId        = x ? x : 0; }
+    getRating     ()  { return this.rating;                }
+    setRating     (x) { this.rating           = x ? x : 5; }
+    getComment    ()  { return this.comment;               }
+    setComment    (x) { this.comment          = x ? x : "";}
+    getDate       ()  { return this.date;                  }
+    setDate       (x) { this.date             = x ? x : "";}
+    getStockItem  ()  { return this.stockItem;             }
+    setStockItem  (x) { this.stockItem        = x ? x : {};}
+    getAccount    ()  { return this.account;               }
+    setAccount    (x) { this.account          = x ? x : {};}
 }
 
 

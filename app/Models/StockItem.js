@@ -7,45 +7,45 @@
 
 class StockItem  {
 
-    constructor (pStockItemId, pTitle, pStockLevel, pImage, pPrice, pManufacturerId, pItemCategoryId) {
+    constructor (stockItemId,title,stockLevel,image,price,manufacturerId,itemCategoryId) {
 
-        this._stockItemId	 = pStockItemId      ? pStockItemId      : 0 ;
-        this._title			 = pTitle            ? pTitle            : "";
-        this._stockLevel	 = pStockLevel       ? pStockLevel       : 0 ;
-        this._image			 = pImage            ? pImage            : "";
-        this._price			 = pPrice            ? pPrice            : 0 ;
-        this._manufacturerId = pManufacturerId   ? pManufacturerId   : 0 ;
-        this._itemCategoryId = pItemCategoryId   ? pItemCategoryId   : 0 ;
-        this._cartItems 	 = [];
-        this._orderItems 	 = [];
-        this._manufacturer 	 = "";
-        this._itemCategory 	 = "";
-        this._stockReviews 	 = [];
+        this.stockItemId	   = this.setStockItemId      (stockItemId);
+        this.title			     = this.setTitle            (title);
+        this.stockLevel	     = this.setStockLevel       (stockLevel);
+        this.image			     = this.setImage            (image);
+        this.price			     = this.setPrice            (price);
+        this.manufacturerId  = this.setManufacturerId   (manufacturerId);
+        this.itemCategoryId  = this.setItemCategoryId   (itemCategoryId);
+        this.cartItems 	     = this.setCartItems        ([]);
+        this.orderItems 	   = this.setOrderItems       ([]);
+        this.manufacturer 	 = this.setManufacturer     ("");
+        this.itemCategory 	 = this.setItemCategory     ("");
+        this.stockReviews 	 = this.setStockReviews     ([]);
     }
-    
+
     // getters and setters
-    getStockItemId   ()  { return this._stockItemId;             }
-    setStockItemId   (x) { this._stockItemId      = (x) ? x : 0; }
-    getTitle         ()  { return this._title;                   }
-    setTitle         (x) { this._title            = (x) ? x : "";}
-    getStockLevel    ()  { return this._stockLevel;              }
-    setStockLevel    (x) { this._stockLevel       = (x) ? x : 0; }
-    getImage         ()  { return this._image;                   }
-    setImage         (x) { this._image            = (x) ? x : "";}
-    getPrice         ()  { return this._price;                   }
-    setPrice         (x) { this._price            = (x) ? x : 0; }
-    getManufacturerId()  { return this._manufacturerId;          }
-    setManufacturerId(x) { this._manufacturerId   = (x) ? x : 0; }
-    getItemCategoryId()  { return this._itemCategoryId;          }
-    setItemCategoryId(x) { this._itemCategoryId   = (x) ? x : 0; }
-    getStockReviews  ()  { return this._stockReviews;            }
-    setStockReviews  (x) { this._stockReviews     = (x) ? x : [];}
-    getCartItems     ()  { return this._cartItems;               }
-    setCartItems     (x) { this._cartItems        = (x) ? x : [];}
-    getOrderItems    ()  { return this._orderItems;              }
-    setOrderItems    (x) { this._orderItems       = (x) ? x : [];}
-    getManufacturer  ()  { return this._manufacturer;            }
-    setManufacturer  (x) { this._manufacturer     = (x) ? x : "";}
-    getItemCategory  ()  { return this._itemCategory;            }
-    setItemCategory  (x) { this._itemCategory     = (x) ? x : "";}
+    getStockItemId   ()  { return this.stockItemId;             }
+    setStockItemId   (x) { this.stockItemId      = (x) ? x : 0; }
+    getTitle         ()  { return this.title;                   }
+    setTitle         (x) { this.title            = (x) ? x : "";}
+    getStockLevel    ()  { return this.stockLevel;              }
+    setStockLevel    (x) { this.stockLevel       = (x) ? x : 0; }
+    getImage         ()  { return this.image;                   }
+    setImage         (x) { this.image            = (x) ? x : "";}
+    getPrice         ()  { return this.price;                   }
+    setPrice         (x) { this.price            = (x) ? x : 0; }
+    getManufacturerId()  { return this.manufacturerId;          }
+    setManufacturerId(x) { this.manufacturerId   = (x) ? x : 0; }
+    getItemCategoryId()  { return this.itemCategoryId;          }
+    setItemCategoryId(x) { this.itemCategoryId   = (x) ? x : 0; }
+    getStockReviews  ()  { return this.stockReviews;            }
+    setStockReviews  (x) { this.stockReviews     = (x) ? x : [];}
+    getCartItems     ()  { return this.cartItems;               }
+    setCartItems     (x) { this.cartItems        = (x) ? x : [];}
+    getOrderItems    ()  { return this.orderItems;              }
+    setOrderItems    (x) { this.orderItems       = (x) ? x : [];}
+    getManufacturer  ()  { return this.manufacturer;            }
+    setManufacturer  (x) { this.manufacturer     = (x) ? x : "";}
+    getItemCategory  ()  { return this.itemCategory;            }
+    setItemCategory  (x) { this.itemCategory     = (x) ? x : "";}
 }

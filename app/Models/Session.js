@@ -7,25 +7,25 @@
 
 class Session  {
 
-    constructor (pSessionId, pAccountId, pDateStart, pDateEnd) {
-        this._sessionId	=  pSessionId   ? pSessionId    : 0  ;
-        this._accountId	=  pAccountId   ? pAccountId    : 0  ;
-        this._dateStart	=  pDateStart   ? pDateStart    : "" ;
-        this._dateEnd	=  pDateEnd     ? pDateEnd      : "" ;
-        this._account 	=  {} ;
+    constructor ( sessionId, accountId, dateStart, dateEnd) {
+        this.sessionId	= this.setSessionId   (sessionId);
+        this.accountId	= this.setAccountId   (accountId);
+        this.dateStart	= this.setDateStart   (dateStart);
+        this.dateEnd	  = this.setDateEnd     (dateEnd);
+        this.account 	  = this.setAccount     ({});
     }
 
     // getters and setters
 
-    getSessionId()  { return this._sessionId;         }
-    setSessionId(x) { this._sessionId    = x ? x : 0; }
-    getAccountId()  { return this._accountId;         }
-    setAccountId(x) { this._accountId    = x ? x : 0; }
-    getDateStart()  { return this._dateStart;         }
-    setDateStart(x) { this._dateStart    = x ? x : "";}
-    getDateEnd  ()  { return this._dateEnd;           }
-    setDateEnd  (x) { this._dateEnd      = x ? x : "";}
-    getAccount  ()  { return this._account;           }
-    setAccount  (x) { this._account      = x ? x : {};}
+    getSessionId()  { return this.sessionId;         }
+    setSessionId(x) { this.sessionId    = x ? x : 0; }
+    getAccountId()  { return this.accountId;         }
+    setAccountId(x) { this.accountId    = x ? x : 0; }
+    getDateStart()  { return this.dateStart;         }
+    setDateStart(x) { this.dateStart    = x ? x : "";}
+    getDateEnd  ()  { return this.dateEnd;           }
+    setDateEnd  (x) { this.dateEnd      = x ? x : "";}
+    getAccount  ()  { return this.account;           }
+    setAccount  (x) { this.account      = x ? x : {};}
 }
 

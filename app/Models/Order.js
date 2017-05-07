@@ -7,30 +7,30 @@
 
 class Order {
 
-    constructor (pOrderId, pAccountId, pDate, pTotal) {
-        this._orderId	 = pOrderId      ? pOrderId      : 0 ;
-        this._accountId	 = pAccountId    ? pAccountId    : 0 ;
-        this._date	     = pDate         ? pDate         : "";
-        this._total	     = pTotal        ? pTotal        : 0 ;
-        this._orderItems = [] ;
-        this._account	 = {} ;
+    constructor (orderId, accountId, date, total) {
+        this.orderId	   = this.setOrderId    (orderId);
+        this.accountId	 = this.setAccountId  (accountId);
+        this.date	       = this.setDate       (date);
+        this.total	     = this.setTotal      (total);
+        this.orderItems  = this.setOrderItems ([]);
+        this.account	   = this.setAccount    ({}) ;
     }
 
     // getters and setters
 
-    getOrderId   ()  { return this._orderId;            }
-    setOrderId   (x) { this._orderId      = x ? x : 0;  }
-    getAccountId ()  { return this._accountId;          }
-    setAccountId (x) { this._accountId    = x ? x : 0;  }
-    getDate      ()  { return this._date;               }
-    setDate      (x) { this._date         = x ? x : ""; }
-    getTotal     ()  { return this._total;              }
-    setTotal     (x) { this._total        = x ? x : 0;  }
-    getOrderItems()  { return this._orderItems;         }
-    setOrderItems(x) { this._orderItems   = x ? x : []; }
-    getAccount   ()  { return this._account;            }
-    setAccount   (x) { this._account      = x ? x : {}; }
+    getOrderId   ()  { return this.orderId;            }
+    setOrderId   (x) { this.orderId      = x ? x : 0;  }
+    getAccountId ()  { return this.accountId;          }
+    setAccountId (x) { this.accountId    = x ? x : 0;  }
+    getDate      ()  { return this.date;               }
+    setDate      (x) { this.date         = x ? x : ""; }
+    getTotal     ()  { return this.total;              }
+    setTotal     (x) { this.total        = x ? x : 0;  }
+    getOrderItems()  { return this.orderItems;         }
+    setOrderItems(x) { this.orderItems   = x ? x : []; }
+    getAccount   ()  { return this.account;            }
+    setAccount   (x) { this.account      = x ? x : {}; }
 }
-    
+
 
 

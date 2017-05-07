@@ -7,19 +7,19 @@
 
 class ItemCategory {
 
-    constructor ( pItemCategoryId, pType)   {
-        this._itemCategoryId = pItemCategoryId   ? pItemCategoryId   : "";
-        this._type           = pType             ? pType             : "";
-        this._stockItems     = [];
+    constructor ( itemCategoryId, type)   {
+        this.itemCategoryId = this.setItemCategoryId(itemCategoryId);
+        this.type           = this.setType          (type)           ;
+        this.stockItems     = this.setStockItems    ([]);
     }
     // public getters and setters
 
-    getItemCategoryId()  { return this._itemCategoryId;        }
-    setItemCategoryId(x) { this._itemCategoryId   = x ? x : 0; }
-    getType          ()  { return this._type;                  }
-    setType          (x) { this._type             = x ? x : "";}
-    getStockItems    ()  { return this._stockItems;            }
-    setStockItems    (x) { this._stockItems       = x ? x : [];}
+    getItemCategoryId()  { return this.itemCategoryId;        }
+    setItemCategoryId(x) { this.itemCategoryId   = x ? x : 0; }
+    getType          ()  { return this.type;                  }
+    setType          (x) { this.type             = x ? x : "";}
+    getStockItems    ()  { return this.stockItems;            }
+    setStockItems    (x) { this.stockItems       = x ? x : [];}
 }
 
 

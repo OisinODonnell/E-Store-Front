@@ -7,27 +7,27 @@
 
 class OrderItem   {
 
-    constructor (pOrderId, pStockItemId, pUnitPrice, pQuantity) {
-        this._orderId		=  pOrderId         ? pOrderId      : 0;
-        this._stockItemId	=  pStockItemId     ? pStockItemId  : 0;
-        this._unitPrice	    =  pUnitPrice       ? pUnitPrice    : 0;
-        this._quantity	    =  pQuantity        ? pQuantity     : 0;
-        this._stockItem 	=  {} ;
-        this._order 		=  {} ;
+    constructor ( orderId, stockItemId, unitPrice, quantity) {
+        this.orderId		  = this.setOrderId    (orderId);
+        this.stockItemId	= this.setStockItemId(stockItemId);
+        this.unitPrice	  = this.setUnitPrice  (unitPrice);
+        this.quantity	    = this.setQuantity   (quantity);
+        this.stockItem 	  = this.setStockItem  ({});
+        this.order 		    = this.setOrder      ({});
     }
 
     // getters and setter
 
-    getOrderId    ()  { return this._orderId;           }
-    setOrderId    (x) { this._orderId      = x ? x : 0; }
-    getStockItemId()  { return this._stockItemId;       }
-    setStockItemId(x) { this._stockItemId  = x ? x : 0; }
-    getUnitPrice  ()  { return this._unitPrice;         }
-    setUnitPrice  (x) { this._unitPrice    = x ? x : 0; }
-    getQuantity   ()  { return this._quantity;          }
-    setQuantity   (x) { this._quantity     = x ? x : 0; }
-    getStockItem  ()  { return this._stockItem;         }
-    setStockItem  (x) { this._stockItem    = x ? x : {};}
-    getOrder      ()  { return this._order;             }
-    setOrder      (x) { this._order        = x ? x : {};}
+    getOrderId    ()  { return this.orderId;           }
+    setOrderId    (x) { this.orderId      = x ? x : 0; }
+    getStockItemId()  { return this.stockItemId;       }
+    setStockItemId(x) { this.stockItemId  = x ? x : 0; }
+    getUnitPrice  ()  { return this.unitPrice;         }
+    setUnitPrice  (x) { this.unitPrice    = x ? x : 0; }
+    getQuantity   ()  { return this.quantity;          }
+    setQuantity   (x) { this.quantity     = x ? x : 0; }
+    getStockItem  ()  { return this.stockItem;         }
+    setStockItem  (x) { this.stockItem    = x ? x : {};}
+    getOrder      ()  { return this.order;             }
+    setOrder      (x) { this.order        = x ? x : {};}
 }

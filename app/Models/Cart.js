@@ -7,28 +7,28 @@
 
 class Cart  {
 
-    constructor (pCartId, pAccountId, pDate, pTotal) {
-        this._cartId	= pCartId       ? pCartId       : 0 ;
-        this._accountId	= pAccountId    ? pAccountId    : 0 ;
-        this._date	    = pDate         ? pDate         : "";
-        this._total	    = pTotal        ? pTotal        : 0 ;
-        this._cartItems	= [];
-        this._account	= {};
+    constructor (cartId, accountId, date, total) {
+        this.cartId	    = this.setCartId    (cartId);
+        this.accountId	= this.setAccountId (accountId);
+        this.date	      = this.setDate      (date);
+        this.total	    = this.setTotal     (total);
+        this.cartItems	= this.setCartItems ([]);
+        this.account	  = this.setAccount   ({});
     }
 
     // getters and setters
 
-    getCartId   ()  { return this._cartId;            }
-    setCartId   (x) { this._cartId       = x ? x : 0; }
-    getAccountId()  { return this._accountId;         }
-    setAccountId(x) { this._accountId    = x ? x : 0; }
-    getDate     ()  { return this._date;              }
-    setDate     (x) { this._date         = x ? x : "";}
-    getTotal    ()  { return this._total;             }
-    setTotal    (x) { this._total        = x ? x : 0; }
-    getCartItems()  { return this._cartItems;         }
-    setCartItems(x) { this._cartItems    = x ? x : [];}
-    getAccount  ()  { return this._account;           }
-    setAccount  (x) { this._account      = x ? x : {};}
+    getCartId   ()  { return this.cartId;            }
+    setCartId   (x) { this.cartId       = x ? x : 0; }
+    getAccountId()  { return this.accountId;         }
+    setAccountId(x) { this.accountId    = x ? x : 0; }
+    getDate     ()  { return this.date;              }
+    setDate     (x) { this.date         = x ? x : "";}
+    getTotal    ()  { return this.total;             }
+    setTotal    (x) { this.total        = x ? x : 0; }
+    getCartItems()  { return this.cartItems;         }
+    setCartItems(x) { this.cartItems    = x ? x : [];}
+    getAccount  ()  { return this.account;           }
+    setAccount  (x) { this.account      = x ? x : {};}
 }
 
