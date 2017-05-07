@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="https://github.com/OisinODonnell/E-Store-FrontEnd.git" uploadOnCheckin="8953cf94-b7ec-4569-a1cb-511630817157">
+  <component name="PublishConfigData" serverName="https://github.com/OisinODonnell/E-Store-Front.git" uploadOnCheckin="1fbc4bee-efbf-41e1-9c22-888cc5c30478">
     <serverData>
-      <paths name="https://github.com/OisinODonnell/E-Store-FrontEnd.git">
+      <paths name="https://github.com/OisinODonnell/E-Store-Front.git">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
@@ -10,6 +10,6 @@
         </serverdata>
       </paths>
     </serverData>
-    <option name="myUploadOnCheckinName" value="https://github.com/OisinODonnell/E-Store-FrontEnd.git" />
+    <option name="myUploadOnCheckinName" value="https://github.com/OisinODonnell/E-Store-Front.git" />
   </component>
 </project>
