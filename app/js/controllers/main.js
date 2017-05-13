@@ -4,18 +4,18 @@ myApp.config(['$routeProvider', '$httpProvider', function ($routeProvider, $http
   $httpProvider.defaults.useXDomain = true;
   $httpProvider.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
-  $routeProvider.when('/', {
+  $routeProvider
+    .when('/', {
     controller: 'StartupController',
     templateUrl: 'index.html'
 
-  }),
-    $routeProvider.when('/Accounts', {
+    })
+    .when('/Accounts', {
       controller: 'AccountController',
       templateUrl: 'accounts.jsp'
 
     })
-
-     .otherwise({ redirectTo: '/' });
+    .otherwise({ redirectTo: '/' });
  }]);
 
 myApp.controller('StartupController', ['$scope', 'dataFactory', function ($scope, dataFactory) {
@@ -34,7 +34,7 @@ myApp.controller('StartupController', ['$scope', 'dataFactory', function ($scope
   $scope.sessions       = {};
 
   // functions to get all details from entities
-  getAll(new Account, dataFactory);
+  // getAll(new Account, dataFactory);
   // getAll(new Manufacturer, dataFactory);
   // getAll(new ItemCategory, dataFactory);
   // getAll(new Order, dataFactory);
@@ -43,7 +43,7 @@ myApp.controller('StartupController', ['$scope', 'dataFactory', function ($scope
   // getAll(new CartItem, dataFactory);
   // getAll(new StockItem, dataFactory);
   // getAll(new StockReview, dataFactory);
-  // getAll(new Session, dataFactory);
+  getAll(new Session, dataFactory);
 
     /**
    * getAllAccounts()

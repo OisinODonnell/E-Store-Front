@@ -3,32 +3,35 @@
 <head >
     <meta charset="UTF-8">
     <title>Title</title>
+  <script src="../lib/angular164.min.js"></script>
+  <script src="../lib/angular164-route.min.js"></script>
+  <script src="../lib/angular164-resource.min.js"></script>
 </head>
-<body ng-app="myApp" >
+<body data-ng-app="myApp" >
   <b> testing </b>
 
   <script src="../lib/underscore-min.js"></script>
   <script src="../lib/lodash.js"></script>
   <script src="../lib/dojo.js"></script>
   <script src="../lib/jquery-3.2.1.min.js"></script>
-  <script src="../lib/angular164.min.js"></script>
-  <script src="../lib/angular164-route.min.js"></script>
-  <script src="../lib/angular164-resource.min.js"></script>
+
   <script src="../js/controllers/main.js"></script>
   <script src="../js/controllers/factory.js"></script>
   <script src="../Models/Account.js"></script>
   <script src="../Models/Manufacturer.js"></script>
   <script src="../Models/ItemCategory.js"></script>
+  <script src="../Models/Session.js"></script>
 
-  <div ng-controller="StartupController" data-ng-model="manufacturers">
+
+  <div data-ng-controller="StartupController" data-ng-model="sessions">
     <!--{{ accounts }}-->
     <!--{{ accounts2 }}-->
 
     <!--{{accounts}}-->
 
-    <div  data-ng-repeat="acc in manufacturers">
+    <div  data-ng-repeat="acc in sessions">
 
-      {{acc.getName()}}
+      {{acc.getDateEnd()}}
 
     </div>
     <div  data-ng-model="itemCategories" data-ng-repeat="acc in itemCategories">
