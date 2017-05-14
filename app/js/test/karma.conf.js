@@ -1,5 +1,7 @@
 // Karma configuration
-// Generated on Sat May 13 2017 15:21:44 GMT+0100 (GMT Daylight Time)
+// Generated on Sun May 14 2017 23:55:31 GMT+0100 (GMT Daylight Time)
+var webpackConfig = require('../../../webpack.config.js');
+webpackConfig.entry = {};
 
 module.exports = function(config) {
   config.set({
@@ -10,16 +12,16 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'requirejs'],
 
 
     // list of files / patterns to load in the browser
     files: [
-        '../../bower_components/angular/angular.js',
-        '../../bower_components/angular-mocks/angular-mocks.js',
-        '../controllers/main.js',
-        '../controllers/app.js',
-        'unit/*.js'
+      'test-main.js',
+      '../../bower_components/angular/angular.js',
+      '../../bower_components/angular-mocks/angular-mocks.js',
+      '../../../app/js/controllers/main.js',
+      'unit/*.js'
     ],
 
 
@@ -31,7 +33,16 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      './app/bundle.js': ['webpack'],
+      './tests/**/*.spec.js': ['babel']
     },
+
+    webpack: webpackConfig,
+
+    webpackMiddleware: {
+      noInfo: true
+    },
+
 
 
     // test results reporter to use
@@ -69,5 +80,5 @@ module.exports = function(config) {
     // Concurrency level
     // how many browser should be started simultaneous
     concurrency: Infinity
-  })
+  });
 }

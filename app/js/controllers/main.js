@@ -1,4 +1,4 @@
-let myApp   = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('myApp', ['ngRoute']);
 
 myApp.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
   $httpProvider.defaults.useXDomain = true;
@@ -80,9 +80,9 @@ myApp.controller('StartupController', ['$scope', 'dataFactory', function ($scope
    */
   function getAll(object, dataFactory) {
 
-    let className = object.constructor.name;
-    let fname     = "get" + plural(className); // add on s or ies
-    let func      = dataFactory[ fname ];
+    var className = object.constructor.name;
+    var fname     = "get" + plural(className); // add on s or ies
+    var func      = dataFactory[ fname ];
 
     func.call()
       .then( function(response) {

@@ -15,6 +15,7 @@
     <orderEntry type="library" name="org.webjars:jasmine:Release" level="application" />
     <orderEntry type="library" name="org.webjars:jasmine:2.5.0" level="application" />
     <orderEntry type="library" name="Karma" level="application" />
+    <orderEntry type="library" name="Node.js" level="application" />
   </component>
   <component name="POM File Configuration" pomFile="" />
 </module>
