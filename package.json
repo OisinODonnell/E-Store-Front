@@ -53,7 +53,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "karma start"
+    "test": "karma start karma.conf.js"
   },
   "dependencies": {
     "babel-runtime": "^6.23.0"

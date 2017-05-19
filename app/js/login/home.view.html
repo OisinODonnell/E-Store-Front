@@ -1,0 +1,15 @@
+﻿<h1>Hi {{user.name}}!</h1>
+<p>You're logged in!!</p>
+<h3>All registered users:</h3>
+<ul>
+    <div ng-if="vm.isAdmin()" >
+      <li ng-repeat="user in vm.allUsers">
+          {{user.name}}
+          - <a ng-click="vm.deleteUser(user.accountId)">Delete</a>
+      </li>
+    </div>
+</ul>
+<p>&nbsp;</p>
+<p><a href="#!/login" class="btn btn-primary">Logout</a></p>
+
+
