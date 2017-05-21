@@ -17,6 +17,8 @@
     <orderEntry type="library" name="Karma" level="application" />
     <orderEntry type="library" name="Node.js" level="application" />
     <orderEntry type="library" name="karma-jasmine-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="bootstrap" level="application" />
+    <orderEntry type="library" name="w3" level="application" />
   </component>
   <component name="POM File Configuration" pomFile="" />
 </module>

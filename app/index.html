@@ -67,7 +67,7 @@
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://bootsnipp.com/css/fullscreen.css" media="all" type="text/css"  rel="stylesheet" >
-  <link href="../app/styles/app.css" rel="stylesheet" />
+  <link href="styles/app.css" rel="stylesheet" />
   <link href="lib/angular-flash.min.css" type="text/css" rel="stylesheet" />
 
   <!--// Angular, JQuery, Bootsrtap and w3-->
@@ -120,8 +120,8 @@
 </head>
 <body>
 
-<!-- ng-controller="LoginController as vm"  hide setup screens until app is stable -->
-<div  ng-cloak>
+ <!--ng-controller="LoginController as vm"  hide setup screens until app is stable -->
+<div  ng-controller="LoginController as vm" ng-cloak>
 
   <!-- Navigation bar is loaded in here-->
   <div id="w3include" w3-include-html="navbar.html"></div>

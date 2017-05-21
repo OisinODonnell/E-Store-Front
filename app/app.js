@@ -19,7 +19,7 @@
           controller: 'LoginController',
           templateUrl: 'js/login/login.view.html',
           controllerAs: 'vm',
-          requireLogin: true
+          requireLogin: false
         })
         .when('/login', {
           controller: 'LoginController',
