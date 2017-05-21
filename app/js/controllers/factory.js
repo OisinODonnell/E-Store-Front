@@ -16,6 +16,7 @@ myApp.factory('DataFactory', ['$http',
 
     factory.logout      = (id, startTime )        => $http.get( urlBase + '/Login/logout/' + id + '/' + startTime );
 
+
     // Account
     factory.getAccounts           = ()            => $http.get( urlBase + '/Accounts' );
     factory.getAccountById        = (id )         => $http.get( urlBase + '/Account/' + id );
@@ -34,6 +35,12 @@ myApp.factory('DataFactory', ['$http',
     factory.getStockItemById      = (id )         => $http.get( urlBase + '/StockItem/' + id );
     factory.addStockItem          = (stockItem)   => $http.get( urlBase + '/StockItem/create', stockItem);
     factory.deleteStockItemById   = (id )         => $http.get( urlBase + '/StockItem/delete/' + id );
+    factory.updateStock           = (id, qty)     => $http.get(urlBase + '/StockItem/' + id + '/' +qty);
+    factory.getStockItemSearch    = (manufId, itemCId, product) =>
+      $http.get(urlBase + '/StockItem/Search/' + manufId + '/' + itemCId + '/' + product) ;
+
+
+
 
     // Manufacturer
     factory.getManufacturers      = ()            => $http.get( urlBase + '/Manufacturers');
@@ -52,30 +59,35 @@ myApp.factory('DataFactory', ['$http',
     factory.getCartById           = (id )         => $http.get( urlBase + '/Cart/' + id );
     factory.addCart               = (cart)        => $http.get( urlBase + '/Cart/create', cart);
     factory.deleteCartById        = (id )         => $http.get( urlBase + '/Cart/delete/' + id );
+    factory.getCartsByAccountId    = id            => $http.get( urlBase + '/Carts/Account/'+id);
 
     // CartItem
     factory.getCartItems          = ()            => $http.get( urlBase + '/CartItems');
     factory.getCartItemById       = (id )         => $http.get( urlBase + '/CartItem/' + id );
     factory.addCartItem           = (cartItem)    => $http.get( urlBase + '/CartItem/create', cartItem);
     factory.deleteCartItemById    = (id )         => $http.get( urlBase + '/CartItem/delete/' + id );
+    factory.getCartItemsByCartId   = id            => $http.get( urlBase + '/CartItems/Cart/' + id);
 
     // Order
     factory.getOrders             = ()            => $http.get( urlBase + '/Orders');
     factory.getOrderById          = (id )         => $http.get( urlBase + '/Order/' + id );
     factory.addOrder              = (order)       => $http.get( urlBase + '/Order/create', order);
     factory.deleteOrderById       = (id )         => $http.get( urlBase + '/Order/delete/' + id );
+    factory.getOrdersByAccountId   = id            => $http.get( urlBase + '/Orders/Account/' + id);
 
     // OrderItem
     factory.getOrderItems         = ()            => $http.get( urlBase + '/OrderItems');
     factory.getOrderItemById      = (id )         => $http.get( urlBase + '/OrderItem/' + id );
     factory.addOrderItem          = (orderItem)   => $http.get( urlBase + '/OrderItem/create', orderItem);
     factory.deleteOrderItemById   = (id )         => $http.get( urlBase + '/OrderItem/delete/' + id );
+    factory.getOrderItemsByOrderId = id            => $http.get( urlBase + '/OrderItems/Order/' + id);
 
     // StockReview
     factory.getStockReviews       = ()             => $http.get( urlBase + '/StockReviews');
-    factory.getStockReviewById    = (id )          => $http.get( urlBase + '/StockReview/' + id );
+    factory.getStockReviewByStockItemId  = (id )   => $http.get( urlBase + '/StockReview/StockItem/' + id );
     factory.addStockReview        = (stockReview)  => $http.get( urlBase + '/StockReview/create', stockReview);
     factory.deleteStockReviewById = (id )          => $http.get( urlBase + '/StockReview/delete/' + id );
+    factory.getStockReviewsByStockItemId = id      => $http.get( urlBase + '/StockReviews/StockItem/' + id);
 
     return factory;
   }]);
