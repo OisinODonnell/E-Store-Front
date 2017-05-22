@@ -1,84 +1,35 @@
 <!DOCTYPE html>
-<html data-ng-app="app" xmlns:href="http://www.w3.org/1999/xhtml">
+<html data-ng-app="app" ng-cloak xmlns:href="http://www.w3.org/1999/xhtml">
 <head>
   <style>
-    body{
-      background:url('http://www.wallpaperup.com/uploads/wallpapers/2012/10/21/20181/cad2441dd3252cf53f12154412286ba0.jpg');
-      padding:50px;
-    }
-    #login-dp{
-      min-width: 250px;
-      padding: 14px 14px 0;
-      overflow:hidden;
-      background-color:rgba(255,255,255,.8);
-    }
-    #login-dp .help-block{
-      font-size:12px
-    }
-    #login-dp .bottom{
-      background-color:rgba(255,255,255,.8);
-      border-top:1px solid #ddd;
-      clear:both;
-      padding:14px;
-    }
-    #login-dp .social-buttons{
-      margin:12px 0
-    }
-    #login-dp .social-buttons a{
-      width: 49%;
-    }
-    #login-dp .form-group {
-      margin-bottom: 10px;
-    }
-    .btn-fb{
-      color: #fff;
-      background-color:#3b5998;
-    }
-    .btn-fb:hover{
-      color: #fff;
-      background-color:#496ebc
-    }
-    .btn-tw{
-      color: #fff;
-      background-color:#55acee;
-    }
-    .btn-tw:hover{
-      color: #fff;
-      background-color:#59b5fa;
-    }
-    @media(max-width:768px){
-      #login-dp{
-        background-color: inherit;
-        color: #fff;
-      }
-      #login-dp .bottom{
-        background-color: inherit;
-        border-top:0 none;
-      }
 
-    }
   </style>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AngularJS User Registration and Login Example</title>
+  <title>Electronics Store</title>
+  <script src="lib/sorttable.js"></script>
 
   <!--// Style sheets-->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" >
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://bootsnipp.com/css/fullscreen.css" media="all" type="text/css"  rel="stylesheet" >
-  <link href="styles/app.css" rel="stylesheet" />
   <link href="lib/angular-flash.min.css" type="text/css" rel="stylesheet" />
+  <link href="styles/app.css" rel="stylesheet" />
 
-  <!--// Angular, JQuery, Bootsrtap and w3-->
-  <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+
+  <!--// Angular, JQuery, Bootstrap, sorttable and w3-->
+  <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+  <!--<script src="lib/jquery.tablesorter.js"></script>-->
+
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link href="//cdnjs.cloudflare.com/ajax/libs/ace/1.2.5/ace.js"/>
-  <script src="https://www.w3schools.com/lib/w3.js"></script>
+  <!--<link  href="//cdnjs.cloudflare.com/ajax/libs/ace/1.2.5/ace.js"/>-->
+  <!--<script src="https://www.w3schools.com/lib/w3.js"></script>-->
   <script src="lib/angular164.min.js"></script>
   <script src="lib/angular164-route.min.js"></script>
   <script src="lib/angular164-cookies.min.js"></script>
   <script src="lib/angular-flash.js"></script>
+
+
 
   <!--// application-->
   <script src="app.js"></script>
@@ -95,9 +46,8 @@
   <script src="js/Stock/Stock.controller.js"></script>
   <script src="js/Accounts/Accounts.controller.js"></script>
 
-  <!--// services-->
-  <script src="js/app-services/authentication.service.js"></script>
-  <!--<script src="js/app-services/flash.service.js"></script>-->
+  <!--// services--> <script src="js/app-services/authentication.service.js"></script>
+  <script src="js/app-services/flash.service.js"></script>
 
   <!-- Real user service that uses an api -->
   <script src="js/app-services/user.service.js"></script>
@@ -120,47 +70,56 @@
 </head>
 <body>
 
-  <div >
-    <div  class="navbar navbar-default navbar-static-top navbar-inverse navbar-toggleable-md navbar-light bg-faded" id="nav-top">
-      <div class="container">
-        <div class="navbar-header">
-        </div>
-        <div class="col-sm-1 collapse navbar-collapse" id="navbar-lgn-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="#!/login" data-ng-show="!loggedIn" >Login</a></li>
-            <li><a href="#!/logout" data-ng-show="loggedIn">Log Out</a></li>
-          </ul>
-        </div>
-        <div  class="col-sm-1 collapse navbar-collapse" id="navbar-crt-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="#!/Accounts/List"                 data-ng-show="admin && loggedIn" >Accounts      </a>   </li>
-            <li><a href="#!/Accounts/Sessions/List"        data-ng-show="admin && loggedIn"        >Sessions      </a>   </li>
-            <li><a href="#!/OrdersAndCarts/Carts/List"     data-ng-show="cust && loggedIn"    >List Carts </a>   </li>
-            <li><a href="#!/OrdersAndCarts/Checkout"       data-ng-show="cust && loggedIn" >Checkout      </a>   </li>
-            <li><a href="#!/OrdersAndCarts/Orders/List"    data-ng-show="(cust || admin ) && loggedIn">List Orders </a>   </li>
-            <li><a href="#!/Stock/Manufacturers/List"      data-ng-show="admin && loggedIn"  >List Manufacturers   </a>   </li>
-            <li><a href="#!/Stock/ItemCategories/List"     data-ng-show="admin && loggedIn"  >List Item Categories </a>   </li>
-            <li><a href="#!/Stock/StockReviews/List"       data-ng-show="cust && loggedIn"   >Show Stock Reviews   </a>   </li>
-            <li><a href="#!/Stock/SearchAdmin"             data-ng-show="admin && loggedIn"  >Product Search  </a>   </li>
-            <li><a href="#!/Stock/SearchCustomer"          data-ng-show="cust && loggedIn"   >Product Search  </a>   </li>
-          </ul>
-        </div>
+<div>
+  <div  class="navbar navbar-default navbar-static-top navbar-inverse navbar-toggleable-md navbar-light bg-faded" id="nav-top">
+    <div class="container">
+      <div class="navbar-header">
+
       </div>
+      <div class="col-sm-1 collapse navbar-collapse" id="navbar-lgn-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="#!/login" data-ng-show="!loggedIn">Login</a></li>
+          <li><a href="#!/logout" data-ng-show="loggedIn">Log Out</a></li>
+        </ul>
+      </div>
+      <div  class="col-sm-1 collapse navbar-collapse" id="navbar-crt-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="#!/Accounts/List"                 data-ng-show = "admin && loggedIn" > Accounts           </a>    </li>
+          <li><a href="#!/Accounts/Sessions/List"        data-ng-show = "admin && loggedIn" > Sessions           </a>    </li>
+          <li><a href="#!/OrdersAndCarts/Carts/List"     data-ng-show = "cust && loggedIn"  > List Carts         </a>    </li>
+          <li><a href="#!/OrdersAndCarts/Checkout"       data-ng-show = "cust && loggedIn"  > Checkout           </a>    </li>
+          <li><a href="#!/OrdersAndCarts/Orders/List"    data-ng-show = "(cust || admin ) && loggedIn">List Orders </a> </li>
+          <li><a href="#!/Stock/Manufacturers/List"      data-ng-show = "admin && loggedIn" > List Manufacturers    </a> </li>
+          <li><a href="#!/Stock/ItemCategories/List"     data-ng-show = "admin && loggedIn" > List Item Categories  </a> </li>
+          <li><a href="#!/Stock/StockReviews/List"       data-ng-show = "cust && loggedIn"  > Show Stock Reviews </a>    </li>
+          <li><a href="#!/Stock/SearchAdmin"             data-ng-show = "admin && loggedIn" > Product Search     </a>    </li>
+          <li><a href="#!/Stock/SearchCustomer"          data-ng-show = "cust && loggedIn"  > Product Search     </a>    </li>
+        </ul>
+      </div>
+
     </div>
   </div>
+</div>
 
 
-  <!--ng-controller="LoginController as vm"  hide setup screens until app is stable -->
-  <div  ng-controller="LoginController as vm" ng-cloak>
 
 
+<!-- ng-controller="LoginController as vm"  hide setup screens until app is stable -->
+<div  ng-cloak>
+
+  <!-- Navigation bar is loaded in here-->
+  <!--<div id="w3include" w3-include-html="navbar.html"></div>-->
+  <!--<script id="navbarInclude">-->
+    <!--w3.includeHTML();-->
+  <!--</script>-->
   <!-- Location of flash messages -->
   <!-- The message should go away after 2 seconds (timeout = 2000), the timeout setting did not work-->
+
   <flash-message  duration="3000" show-close="true" >
     <div class="my-flash"></div>
   </flash-message>
   <div ng-view>
-    <!-- single page website pages come in here-->
+                <!-- single page website pages come in here-->
   </div>
 
 </div>

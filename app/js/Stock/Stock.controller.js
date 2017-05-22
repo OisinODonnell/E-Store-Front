@@ -2,8 +2,8 @@
  * Created by oisin on 07/05/2017.
  */
 
-myApp.controller('StockController', ['DataFactory','$http', '$scope', 'Common',
-  function ( DataFactory,$http, $scope,Common) {
+myApp.controller('StockController', ['DataFactory','$http', '$scope', 'Common','$rootScope',
+  function ( DataFactory,$http, $scope, Common, $rootScope) {
     let vm = this;
     $scope.test="";
     $scope.testMessage="List Stock/Manufacturers/ItemCategories/Reviews ...";
@@ -15,11 +15,14 @@ myApp.controller('StockController', ['DataFactory','$http', '$scope', 'Common',
     $scope.itemCategoryId        = 0;
     $scope.reviews               = {};
     $scope.manufacturers         = {};
+    $scope.manufacturersList     = {};
     $scope.itemCategories        = {};
-
+    $scope.itemCategoriesList    = {};
     $scope.stockItems            = {};
     $scope.stockReviews          = {};
     $scope.orderQuantity         = 0;
+
+    Common.reloadJs("lib/sorttable.js");
 
     $scope.manufacturer = "none selected";
     $scope.itemCategory = "none selected";
@@ -30,6 +33,9 @@ myApp.controller('StockController', ['DataFactory','$http', '$scope', 'Common',
 
     $scope.val=0;
 
+    ListManufacturers();
+    ListItemCategories();
+    ListStockReviews();
 
     // simple collections auto run these before gathering any stock data
     // these will be used to populate the dropdown lists
@@ -49,10 +55,6 @@ myApp.controller('StockController', ['DataFactory','$http', '$scope', 'Common',
     };
 
     return factory;
-
-    ListManufacturers();
-    ListItemCategories();
-
 
     function increment(v)         {  v.stockLevel --;    }
     function decrement(v)         {  v.stockLevel ++;    }
@@ -84,9 +86,22 @@ myApp.controller('StockController', ['DataFactory','$http', '$scope', 'Common',
             // add option for no entry to top of list
             manufacturer.setManufacturerId(0);
             manufacturer.setName("None Selected");
+            // keep a copy without the extra line at the top
+            $scope.manufacturersList = angular.copy($scope.manufacturers);
             $scope.manufacturers.unshift(manufacturer);
           },
           function (error) { $scope.status = 'Unable to load Manufacturer data ' + error.message; });
+      vm.dataLoading = false;
+    }
+
+    function ListStockReviews() {
+      vm.dataLoading = true;
+      let stockReview = new StockReview();
+      DataFactory.getStockReviewsByAccountId($rootScope.accountId)
+        .then( function(response) {
+            $scope.stockReviews = Common.createObjects(response.data, stockReview);
+          },
+          function (error) { $scope.status = 'Unable to load Stock Review data ' + error.message; });
       vm.dataLoading = false;
     }
 
@@ -99,6 +114,7 @@ myApp.controller('StockController', ['DataFactory','$http', '$scope', 'Common',
             // add option for no entry
             itemCategory.setItemCategoryId(0);
             itemCategory.setType("None Selected");
+            $scope.itemCategoriesList = angular.copy($scope.itemCategories);
             $scope.itemCategories.unshift(itemCategory);
           },
           function (error) { $scope.status = 'Unable to load Item Category data ' + error.message; });

@@ -7,7 +7,7 @@
 
 class StockItem  {
 
-    constructor (stockItemId,title,stockLevel,image,price,manufacturerId,itemCategoryId) {
+    constructor (stockItemId,title,stockLevel,image,price,manufacturerId,itemCategoryId,newStockQty) {
 
         this.stockItemId	   = this.setStockItemId      (stockItemId);
         this.title			     = this.setTitle            (title);
@@ -21,6 +21,8 @@ class StockItem  {
         this.manufacturer 	 = this.setManufacturer     ("");
         this.itemCategory 	 = this.setItemCategory     ("");
         this.stockReviews 	 = this.setStockReviews     ([]);
+        this.newStockQty     = this.setNewStockQty      (0);
+
     }
 
     // getters and setters
@@ -48,4 +50,7 @@ class StockItem  {
     setManufacturer  (x) { this.manufacturer     = (x) ? x : "";}
     getItemCategory  ()  { return this.itemCategory;            }
     setItemCategory  (x) { this.itemCategory     = (x) ? x : "";}
+    getNewStockQty  ()   { return this.newStockQty;             }
+    setNewStockQty  (x)  { this.newStockQty      = (x) ? x : "";}
+
 }

@@ -28,6 +28,7 @@ class StockReview {
     setRating     (x) { this.rating           = x ? x : 5; }
     getComment    ()  { return this.comment;               }
     setComment    (x) { this.comment          = x ? x : "";}
+    getDateString ()  { return new Date(this.date);        }
     getDate       ()  { return this.date;                  }
     setDate       (x) { this.date             = x ? x : "";}
     getStockItem  ()  { return this.stockItem;             }

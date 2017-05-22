@@ -55,14 +55,13 @@
       <br><br>
     </form>
 </div>
-
+<script>
+  C
+</script>
 <div ng-show="stockItems.length > 0">
   <div class="tg">
-    <table class="sortable">
+    <table class="sortable" >
       <tr>
-        <!--Sorttable is a useful library, it sorts all columns except those explicitly excluded (sorttable_nosort-->
-        <!--It will also property handle numeric fields (sorttable_numeric) -->
-        <!-- credits to https://kryogenix.org/code/browser/sorttable-->
         <th class="sorttable_numeric">Part Number</th>
         <th class="tg-yw4l">Product Name</th>
         <th class="sorttable_numeric">Price</th>
@@ -72,7 +71,10 @@
         <th class="sorttable_numeric">Rating</th>
         <th class="sorttable_numeric">Reviews</th>
         <th class="sorttable_nosort">Image</th>
-        <th align="center" colspan="3" class="sorttable_nosort">Quantity to order</th>
+        <th class="sorttable_nosort"> </th>
+        <th class="sorttable_nosort"> </th>
+        <th class="sorttable_nosort"> </th>
+        <!--<th align="center" colspan="3" class="sorttable_nosort">Quantity to order</th>-->
         <th class="sorttable_nosort">Add To Basket</th>
       </tr>
       <tr ng-repeat="item in stockItems">
@@ -100,3 +102,6 @@
     </table>
   </div>
 </div>
+<script>
+
+</script>

@@ -22,6 +22,7 @@ class Order {
     setOrderId   (x) { this.orderId      = x ? x : 0;  }
     getAccountId ()  { return this.accountId;          }
     setAccountId (x) { this.accountId    = x ? x : 0;  }
+    getDateString()  { return new Date(this.date);     }
     getDate      ()  { return this.date;               }
     setDate      (x) { this.date         = x ? x : ""; }
     getTotal     ()  { return this.total;              }
@@ -30,6 +31,8 @@ class Order {
     setOrderItems(x) { this.orderItems   = x ? x : []; }
     getAccount   ()  { return this.account;            }
     setAccount   (x) { this.account      = x ? x : {}; }
+
+    getOrderItemCount () { return this.orderItems.length }
 }
 
 

@@ -27,7 +27,8 @@ class OrderItem   {
     getQuantity   ()  { return this.quantity;          }
     setQuantity   (x) { this.quantity     = x ? x : 0; }
     getStockItem  ()  { return this.stockItem;         }
-    setStockItem  (x) { this.stockItem    = x ? x : {};}
+    setStockItem  (x) { this.stockItem    = x ? x : {}; }
     getOrder      ()  { return this.order;             }
-    setOrder      (x) { this.order        = x ? x : {};}
+    setOrder      (x) { this.order        = x ? x : {}; }
+    getTotal      ()  { return this.quantity  * this.unitPrice };
 }

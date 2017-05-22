@@ -30,7 +30,7 @@ class Account {
 
     getAccountId     ()  { return this.accountId;             }
     setAccountId     (x) { this.accountId        = x ? x : 0; }
-    getDateJoined    ()  { return this.dateJoined;            }
+    getDateJoinedString    ()  { return new Date(this.dateJoined);            }
     setDateJoined    (x) { this.dateJoined       = x ? x : "";}
     getName          ()  { return this.name;                  }
     setName          (x) { this.name             = x ? x : "";}

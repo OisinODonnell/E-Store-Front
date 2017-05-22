@@ -21,9 +21,11 @@ class Session  {
     setSessionId(x) { this.sessionId    = x ? x : 0; }
     getAccountId()  { return this.accountId;         }
     setAccountId(x) { this.accountId    = x ? x : 0; }
+    getDateStartString()  { return new Date(this.dateStart); }
     getDateStart()  { return this.dateStart;         }
     setDateStart(x) { this.dateStart    = x ? x : "";}
-    getDateEnd  ()  { return this.dateEnd;           }
+  getDateEndString  ()  { return new Date(this.dateEnd);           }
+  getDateEnd  ()  { return this.dateEnd;           }
     setDateEnd  (x) { this.dateEnd      = x ? x : "";}
     getAccount  ()  { return this.account;           }
     setAccount  (x) { this.account      = x ? x : {};}

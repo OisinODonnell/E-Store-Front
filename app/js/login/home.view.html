@@ -1,8 +1,9 @@
-﻿<h1>Hi {{user.name}}!</h1>
+﻿<h1>Hi {{vm.username}}!</h1>
 <p>You're logged in!!</p>
-<h3>All registered users:</h3>
+
 <ul>
     <div ng-if="vm.isAdmin()" >
+      <h3>All registered users:</h3>
       <li ng-repeat="user in vm.allUsers">
           {{user.name}}
           - <a ng-click="vm.deleteUser(user.accountId)">Delete</a>

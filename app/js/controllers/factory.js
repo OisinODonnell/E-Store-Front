@@ -1,5 +1,4 @@
-myApp.factory('DataFactory', ['$http',
-  function ($http) {
+myApp.factory('DataFactory', ['$http', function ($http) {
 
     let factory   = {};
     const urlBase = 'http://localhost:8080';
@@ -14,8 +13,8 @@ myApp.factory('DataFactory', ['$http',
       $http.get( urlBase + '/Login/register/' + name + '/' + email + '/' + password + '/' + accountType + '/' + phone + '/' + loyaltyCard +
         '/' + addressStreet + '/' + addressCity + '/' + addressCountry + '/' + paymentType );
 
-    factory.logout      = (id, startTime )        => $http.get( urlBase + '/Login/logout/' + id + '/' + startTime );
 
+    factory.logout      = (id, startTime )        => $http.get( urlBase + '/Login/logout/' + id + '/' + startTime );
 
     // Account
     factory.getAccounts           = ()            => $http.get( urlBase + '/Accounts' );
@@ -88,7 +87,7 @@ myApp.factory('DataFactory', ['$http',
     factory.addStockReview        = (stockReview)  => $http.get( urlBase + '/StockReview/create', stockReview);
     factory.deleteStockReviewById = (id )          => $http.get( urlBase + '/StockReview/delete/' + id );
     factory.getStockReviewsByStockItemId = id      => $http.get( urlBase + '/StockReviews/StockItem/' + id);
-
+    factory.getStockReviewsByAccountId   = (id)    => $http.get( urlBase + '/StockReviews/Account/' + id);
     return factory;
-  }]);
+}]);
 

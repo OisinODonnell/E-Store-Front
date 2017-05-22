@@ -22,6 +22,8 @@ class Cart  {
     setCartId   (x) { this.cartId       = x ? x : 0; }
     getAccountId()  { return this.accountId;         }
     setAccountId(x) { this.accountId    = x ? x : 0; }
+
+    getDateString (){ return new Date(this.date);    }
     getDate     ()  { return this.date;              }
     setDate     (x) { this.date         = x ? x : "";}
     getTotal    ()  { return this.total;             }
@@ -30,5 +32,7 @@ class Cart  {
     setCartItems(x) { this.cartItems    = x ? x : [];}
     getAccount  ()  { return this.account;           }
     setAccount  (x) { this.account      = x ? x : {};}
+
+    getCartItemCount () { return this.cartItems.length }
 }
 

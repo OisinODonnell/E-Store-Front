@@ -29,5 +29,7 @@ class  CartItem {
     setCart       (x) { this.cart             = x ? x : {};}
     getStockItem  ()  { return this.stockItem;             }
     setStockItem  (x) { this.stockItem        = x ? x : {};}
+
+    getTotal      ()  { return this.quantity * this.unitPrice };
 }
 
