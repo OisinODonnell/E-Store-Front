@@ -120,17 +120,42 @@
 </head>
 <body>
 
- <!--ng-controller="LoginController as vm"  hide setup screens until app is stable -->
-<div  ng-controller="LoginController as vm" ng-cloak>
+  <div >
+    <div  class="navbar navbar-default navbar-static-top navbar-inverse navbar-toggleable-md navbar-light bg-faded" id="nav-top">
+      <div class="container">
+        <div class="navbar-header">
+        </div>
+        <div class="col-sm-1 collapse navbar-collapse" id="navbar-lgn-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#!/login" data-ng-show="!loggedIn" >Login</a></li>
+            <li><a href="#!/logout" data-ng-show="loggedIn">Log Out</a></li>
+          </ul>
+        </div>
+        <div  class="col-sm-1 collapse navbar-collapse" id="navbar-crt-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#!/Accounts/List"                 data-ng-show="admin && loggedIn" >Accounts      </a>   </li>
+            <li><a href="#!/Accounts/Sessions/List"        data-ng-show="admin && loggedIn"        >Sessions      </a>   </li>
+            <li><a href="#!/OrdersAndCarts/Carts/List"     data-ng-show="cust && loggedIn"    >List Carts </a>   </li>
+            <li><a href="#!/OrdersAndCarts/Checkout"       data-ng-show="cust && loggedIn" >Checkout      </a>   </li>
+            <li><a href="#!/OrdersAndCarts/Orders/List"    data-ng-show="(cust || admin ) && loggedIn">List Orders </a>   </li>
+            <li><a href="#!/Stock/Manufacturers/List"      data-ng-show="admin && loggedIn"  >List Manufacturers   </a>   </li>
+            <li><a href="#!/Stock/ItemCategories/List"     data-ng-show="admin && loggedIn"  >List Item Categories </a>   </li>
+            <li><a href="#!/Stock/StockReviews/List"       data-ng-show="cust && loggedIn"   >Show Stock Reviews   </a>   </li>
+            <li><a href="#!/Stock/SearchAdmin"             data-ng-show="admin && loggedIn"  >Product Search  </a>   </li>
+            <li><a href="#!/Stock/SearchCustomer"          data-ng-show="cust && loggedIn"   >Product Search  </a>   </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <!-- Navigation bar is loaded in here-->
-  <div id="w3include" w3-include-html="navbar.html"></div>
-  <script id="navbarInclude">
-    w3.includeHTML();
-  </script>
+
+  <!--ng-controller="LoginController as vm"  hide setup screens until app is stable -->
+  <div  ng-controller="LoginController as vm" ng-cloak>
+
+
   <!-- Location of flash messages -->
   <!-- The message should go away after 2 seconds (timeout = 2000), the timeout setting did not work-->
-
   <flash-message  duration="3000" show-close="true" >
     <div class="my-flash"></div>
   </flash-message>
