@@ -117,7 +117,7 @@
           requireLogin: true,
           controllerAs: 'vm'
         })
-        CartItems
+        // CartItems
         .when('/OrdersAndCarts/CartItems/List', {
           controller: 'OrdersAndCartsController',
           templateUrl: 'js/OrdersAndCarts/List-CartItems.view.html',
