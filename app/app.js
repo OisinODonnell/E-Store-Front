@@ -99,25 +99,25 @@
           requireLogin: true,
           controllerAs: 'vm'
         })
-        // .when('/OrdersAndCarts/CartById', {
-        //   controller: 'OrdersAndCartsController',
-        //   templateUrl: 'js/OrdersAndCarts/Find-Cart.view.html',
-        //   requireLogin: true,
-        //   controllerAs: 'vm'
-        // })
-        // .when('/OrdersAndCarts/CartAdd', {
-        //   controller: 'OrdersAndCartsController',
-        //   templateUrl: 'js/OrdersAndCarts/Add-Cart.view.html',
-        //   requireLogin: true,
-        //   controllerAs: 'vm'
-        // })
-        // .when('/OrdersAndCarts/CartDeleteById', {
-        //   controller: 'OrdersAndCartsController',
-        //   templateUrl: 'js/OrdersAndCarts/Delete-Cart.view.html',
-        //   requireLogin: true,
-        //   controllerAs: 'vm'
-        // })
-        // CartItems
+        .when('/OrdersAndCarts/CartById', {
+          controller: 'OrdersAndCartsController',
+          templateUrl: 'js/OrdersAndCarts/Find-Cart.view.html',
+          requireLogin: true,
+          controllerAs: 'vm'
+        })
+        .when('/OrdersAndCarts/CartAdd', {
+          controller: 'OrdersAndCartsController',
+          templateUrl: 'js/OrdersAndCarts/Add-Cart.view.html',
+          requireLogin: true,
+          controllerAs: 'vm'
+        })
+        .when('/OrdersAndCarts/CartDeleteById', {
+          controller: 'OrdersAndCartsController',
+          templateUrl: 'js/OrdersAndCarts/Delete-Cart.view.html',
+          requireLogin: true,
+          controllerAs: 'vm'
+        })
+        CartItems
         .when('/OrdersAndCarts/CartItems/List', {
           controller: 'OrdersAndCartsController',
           templateUrl: 'js/OrdersAndCarts/List-CartItems.view.html',
